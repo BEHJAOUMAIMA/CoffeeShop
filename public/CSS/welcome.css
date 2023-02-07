@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@400;500;600;700&family=Dancing+Script:wght@400;500;600;700&family=Kaushan+Script&family=Pacifico&family=Poppins:wght@500;600;700;900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #efefef;
+}
+
+.navbar{
+    background-color: #efefef;
+}
+.logo{
+    width:44px;
+    height: 40px;
+}
+.title{
+    font-family: 'Caveat', cursive;
+    font-size: 29px;
+    font-weight: bolder;
+}
+.introduction{
+    background-image: url('../images/bgIntro1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 380px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+}
+.titre{
+    font-family: 'Anton', sans-serif;
+    font-size: 45px;
+    margin-left: 50px;
+}
+.text{
+    font-size: 22px; 
+    font-weight: 600;
+    margin-left: 50px;
+}
+.carousel-item{
+    height: 400px;
+    width: 90%;
+}
+.picture{
+    height: 400px;
+    width: 90%;
+}
