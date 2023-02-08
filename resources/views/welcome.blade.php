@@ -6,6 +6,7 @@
         <!-- Bootstrap -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
         <link href="{{asset('css/welcome.css')}}" rel="stylesheet">
 
         <title>Coffee Shop</title>
@@ -220,14 +221,52 @@
                 </div>
             </div>
         </div>
-        <div class="menu-item mt-2 mx-auto py-3 px-4">
-            <p class="">ICE BLENDED</p>
+        
+        <div class="fiche mx-auto mt-5 d-flex align-items-center justify-content-evenly">
+            <div style="width: 250px;">
+            </div>
+            <div class="d-flex flex-column">
+                <p class="fiche-title text-center">TAKE YOUR</p>
+                <p class="fiche-title text-center">COFFEE NOW .</p>
+            </div>
+            <div class="d-flex flex-column">
+                <p class="fiche-text text-center">Don't let your coffee Cold.</p>
+                <p class="fiche-text text-center">Let's go to <span>Couuuffeeee</span> and</p>
+                <p class="fiche-text text-center">get your Coffee and</p>
+                <p class="fiche-text text-center">boost your day now !</p>
+            </div>
         </div>
     </section>
+    <footer style="background-color:#393E46;">
+        <div class="container mt-5 py-5">
+            <div class="d-flex flex-nowrap justify-content-center">
+                <a href="#" style="color: white;"><i id="bx1" class='bx bxl-facebook fs-1 mx-2'></i></a>
+                <a href="#" style="color: white;"><i id="bx2" class='bx bxl-twitter fs-1 mx-2' ></i></a>
+                <a href="#" style="color: white;"><i id="bx3" class='bx bxl-instagram fs-1 mx-2' ></i></a>
+                <a href="#" style="color: white;"><i id="bx4" class='bx bxl-youtube fs-1 mx-2' ></i></a>
+                <a href="#" style="color: white;"><i id="bx5" class='bx bxl-whatsapp fs-1 mx-2' ></i></a>
+            </div>
+            <div class="d-flex justify-content-around mt-5">
+                <div class="d-flex flex-column text-white me-4">
+                    <p><img class="logo" src="{{asset('images/logo1.png')}}" alt=""><span class="title me-5">ouuuffeeee</span></p>
+                    <p class="ms-2">Couuuffeeee is a place that serve</p>
+                    <p class="ms-2">many variant of coffee and other dashes</p>
+                    <p class="ms-2 mb-5">with very confortable place.</p>
+                </div>
+                <div class="d-flex flex-column text-white mt-5">
+                    <p class=""><i class='bx bx-map fs-4 mx-1'></i>Boulevard moulay youssef,</p>
+                    <p class="ms-4"> Youssoufia, Maroc</p>
+                </div>
+            </div>
+            <hr class="pb-5 text-white text-center">
+            <div class="text-center py-2">
+                <p class="text-white">© 2023 Couuuffeeee-Tous les droits sont réservés</p>
+            </div>
+            
+            
+        </div>
+    </footer>
     </body>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-    <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            
-        </div>
 </html>

@@ -42,14 +42,7 @@ body{
     font-weight: 600;
     margin-left: 50px;
 }
-.carousel-item{
-    height: 400px;
-    width: 90%;
-}
-.picture{
-    height: 400px;
-    width: 90%;
-}
+
 .menu-title{
     font-weight: bolder;
     font-size: 70px;
@@ -71,4 +64,52 @@ body{
     font-size: 20px;
     font-weight: bold;
     font-family: 'Josefin Sans', sans-serif;
+}
+.fiche{
+    background-image: url('../images/bg1.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 90%;
+    height: 380px;
+    border-radius: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+}
+.fiche-title{
+    font-family: 'Anton', sans-serif;
+    font-size: 45px;
+    color: white;
+    animation:flash;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.fiche-text{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+#bx1:hover {
+    color: #386bbe;
+    transform: scale(1.5);
+}
+
+#bx2:hover {
+    color: rgb(29, 155, 240);
+    transform: scale(1.5);
+}
+
+#bx3:hover {
+    color: #C13584;
+    transform: scale(1.5);
+}
+
+#bx4:hover {
+    color: red;
+    transform: scale(1.5);
+}
+
+#bx5:hover {
+    color: rgb(16, 199, 16);
+    transform: scale(1.5);
 }
