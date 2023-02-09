@@ -113,3 +113,7 @@ body{
     color: rgb(16, 199, 16);
     transform: scale(1.5);
 }
+.row {
+    background-color: white;
+    border-radius: 30px;
+}

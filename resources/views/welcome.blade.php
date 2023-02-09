@@ -21,11 +21,8 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ms-5 me-3">
-                        <a class="nav-link text-dark fw-semibold" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item ms-5">
-                        <a class="nav-link text-dark fw-semibold" href="#">Menu</a>
-                    </li>     
+                        <a class="nav-link me-auto text-dark fw-semibold" aria-current="page" href="/menu">Menu</a>
+                    </li>    
                 </ul>
                 <div>
                     @if (Route::has('login'))
