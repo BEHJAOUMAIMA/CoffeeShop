@@ -11,7 +11,7 @@
             <div class="d-flex flex-column text-white me-4">
                 <p><img class="logo" src="{{asset('images/logo1.png')}}" alt=""><span class="title me-5">ouuuffeeee</span></p>
                 <p class="ms-2">Couuuffeeee is a place that serve</p>
-                <p class="ms-2">many variant of coffee and other dashes</p>
+                <p class="ms-2">many variant of coffee and other dishes</p>
                 <p class="ms-2 mb-5">with very confortable place.</p>
             </div>
             <div class="d-flex flex-column text-white mt-5">

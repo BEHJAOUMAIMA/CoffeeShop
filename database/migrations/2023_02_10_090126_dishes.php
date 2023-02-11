@@ -13,16 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('dashes', function (Blueprint $table) {
+        Schema::create('dishes', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('image_path');
             $table->string('name');
             $table->integer('price');
-            $table->string('category');
+            $table->string('Category');
             $table->longText('description');
+            $table->string('image_path');
             $table->timestamps();
-            $table->foreign('category')->references('id_category')->on('categories')->onDelete('cascade');
-        });   
+        });
     }
 
     /**

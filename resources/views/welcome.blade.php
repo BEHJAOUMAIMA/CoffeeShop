@@ -26,9 +26,9 @@
                 </ul>
                 <div>
                     @if (Route::has('login'))
-                        <div class="">
+                        <div>
                             @auth
-                                <a href="{{ url('/home') }}" class="text-dark fs-6 fw-semibold text-decoration-none">Dashboard</a>
+                                <a href="{{ url('/home') }}" class="text-dark fs-6 fw-normal text-decoration-none"> {{ Auth::user()->name }}</a>
                             @else
                                 <a href="{{ route('login') }}" class="aut fs-6 text-dark fw-semibold text-decoration-none px-2">Login</a>
 

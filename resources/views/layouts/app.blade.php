@@ -74,9 +74,9 @@
             </div>
         </nav>
         </div>
-            @yield('menu')
-        </div>
-
+            @yield('content')
+         </div>
+        
         <div>
             @extends('layouts.footer')
         </div>

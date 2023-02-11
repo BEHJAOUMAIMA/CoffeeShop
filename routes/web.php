@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashesController;
+use App\Http\Controllers\DishesController;
 use App\Http\Controllers\PagesController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'welcome']);
-Route::resource('/menu', DashesController::class);
+Route::resource('/menu',DishesController::class);
 
 Auth::routes();
 
