@@ -45,6 +45,13 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        @if(session('error'))
+            <div class="alert alert-danger mb-1 mt-1">
+                {{ session('error') }}
+            </div>
+        @endif
+    </div>
     <section class="">
         <div class="introduction mx-auto mt-5 d-flex justify-content-center text-white flex-column">
             <p class="titre pt-3">ENJOY YOUR</p>
@@ -58,28 +65,6 @@
             <p class="citation">A gathering place in Downtown Farmville! Stop by and enjoy coffee, tea, live music,</p>
             <p class="citation">ice cream and much more!</p>
         </div>
-        {{-- <div class="container">
-            <p class="my-4 fs-1 fw-bold text-center">Our Menu</p>
-        </div>   
-        <div class="menu-item mx-auto py-3 px-4">
-            <p class="">ESPRESSO</p>
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto my-4" style="width:90%;">
-            @foreach ($dishes as $dish)
-                <div class="col">
-                    <div class="card">
-                    <img src="{{$dish->image_path}}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Americano</h5>
-                        <p class="">ESPRESSO</p>
-                        <h5 class="card-title">Americano</h5>
-                        <p class="card-text text-truncate">The Americano Coffee is a favorite among coffee lovers who enjoy the taste of espresso but in a more diluted form. It is made with espresso and hot water, creating the perfect combination of boldness and smoothness. Whether you are already a fan of this beverage or want to learn more about it, here’s all you need to know about Americano Coffee.</p>
-                        <a href="#" class="btn btn-outline-dark">Read more</a>
-                    </div>
-                    </div>
-                </div>
-            @endforeach
-        </div> --}}
         
         <div class="fiche mx-auto mt-5 d-flex align-items-center justify-content-evenly">
             <div style="width: 250px;">

@@ -10,7 +10,7 @@
             <p>{{ $message }}</p>
         </div>
     @endif  
-    @if(Auth::check())
+    @if(Auth::check() && Auth::user()->isAdmin == 1)
         <div class="container ms-auto py-3 px-4">
             <a href="/menu/create" class="btn btn-outline-dark w-25 py-3 ms-0 ps-0"><i class='bx bx-plus fs-5 fw-bold'></i> <span class="fs-4 fw-bold">Add new dish </span></a>
         </div>
