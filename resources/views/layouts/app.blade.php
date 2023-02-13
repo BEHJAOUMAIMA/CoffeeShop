@@ -20,7 +20,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md">
+        <nav class="navbar navbar-expand-md mb-5">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                 <img class="logo ms-3" src="{{asset('images/logo1.png')}}" alt=""><span class="title me-5">ouuuffeeee</span>
@@ -57,6 +57,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/profile">
+                                        Edit Profile
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

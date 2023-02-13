@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DishesController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\Auth\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,8 +17,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'welcome']);
-Route::resource('/menu',DishesController::class);
+Route::get('/homeUser', [DishesController::class, 'index']);
+Route::resource('/menu',DishesController::class)->middleware('isAdmin');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('profile',[ProfileController::class,'index'])->name('profile');
+    Route::post('profile/{user}',[ProfileController::class,'updateInformation'])->name('profile.update');
+    Route::post('profile/{user}',[ProfileController::class,'updatePassword'])->name('profile.update');
+});
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('welcome', [App\Http\Controllers\HomeController::class, 'index'])->name('welcome');

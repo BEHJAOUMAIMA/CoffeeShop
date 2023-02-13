@@ -21,6 +21,9 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item ms-5 me-3">
+                        <a class="nav-link me-auto text-dark fw-semibold" aria-current="page" href="/homeUser">Home</a>
+                    </li> 
+                    <li class="nav-item ms-5 me-3">
                         <a class="nav-link me-auto text-dark fw-semibold" aria-current="page" href="/menu">Menu</a>
                     </li>    
                 </ul>
@@ -28,7 +31,7 @@
                     @if (Route::has('login'))
                         <div>
                             @auth
-                                <a href="{{ url('/home') }}" class="text-dark fs-6 fw-normal text-decoration-none"> {{ Auth::user()->name }}</a>
+                                <a href="{{ url('/menu') }}" class="text-dark fs-6 fw-normal text-decoration-none"> {{ Auth::user()->name }}</a>
                             @else
                                 <a href="{{ route('login') }}" class="aut fs-6 text-dark fw-semibold text-decoration-none px-2">Login</a>
 
@@ -50,174 +53,33 @@
             <p class="text">with a glass of Coffee in the Morning</p>
         </div>
         <div class="menu text-center mt-5 py-5">
-            <p class="menu-title">Coffee Shop Menu</p>
+            <p class="menu-title">Welcome to The Best Coffee in Morocco!</p>
             <p class="citation">Great Coffee Served Everyday</p>
+            <p class="citation">A gathering place in Downtown Farmville! Stop by and enjoy coffee, tea, live music,</p>
+            <p class="citation">ice cream and much more!</p>
         </div>
+        {{-- <div class="container">
+            <p class="my-4 fs-1 fw-bold text-center">Our Menu</p>
+        </div>   
         <div class="menu-item mx-auto py-3 px-4">
             <p class="">ESPRESSO</p>
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto my-4" style="width:90%;">
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/americano.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Americano</h5>
-                    <p class="card-text text-truncate">The Americano Coffee is a favorite among coffee lovers who enjoy the taste of espresso but in a more diluted form. It is made with espresso and hot water, creating the perfect combination of boldness and smoothness. Whether you are already a fan of this beverage or want to learn more about it, here’s all you need to know about Americano Coffee.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
+            @foreach ($dishes as $dish)
+                <div class="col">
+                    <div class="card">
+                    <img src="{{$dish->image_path}}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Americano</h5>
+                        <p class="">ESPRESSO</p>
+                        <h5 class="card-title">Americano</h5>
+                        <p class="card-text text-truncate">The Americano Coffee is a favorite among coffee lovers who enjoy the taste of espresso but in a more diluted form. It is made with espresso and hot water, creating the perfect combination of boldness and smoothness. Whether you are already a fan of this beverage or want to learn more about it, here’s all you need to know about Americano Coffee.</p>
+                        <a href="#" class="btn btn-outline-dark">Read more</a>
+                    </div>
+                    </div>
                 </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/cappuccino.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Cappuccino</h5>
-                    <p class="card-text text-truncate">A cappuccino is the perfect balance of espresso, steamed milk and foam. This coffee is all about the structure and the even splitting of all elements into equal thirds. An expertly made cappuccino should be rich, but not acidic and have a mildly sweet flavouring from the milk. And, because the milk is not actually mixed in it gives the espresso a stronger flavour.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>                
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/latte.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Latte</h5>
-                    <p class="card-text text-truncate">A latte or caffè latte is a milk coffee that boasts a silky layer of foam as a real highlight to the drink. A true latte will be made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top. These elements combined result in a balanced milky coffee that possesses an aesthetically pleasing look and a smooth texture.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>                
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/espresso.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Double espresso</h5>
-                    <p class="card-text text-truncate">Put simply, a double espresso is exactly what it says on the tin – 2 shots of espresso. This equates to around 2oz of espresso and 128mg of caffeine.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/macchiato.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Macchiato</h5>
-                    <p class="card-text text-truncate">A macchiato is primarily made from espresso. However, it offers an alternative to the classic espresso for those who want a robust flavor hit with a touch of creaminess provided by the spot of milk. Most countries have adopted the Italian name, but if you’re looking for a macchiato in Portugal, you may need to order "cafe pingado" which translates as "coffee with a drop" (the splash of milk).</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/mint.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Mint Chocolate</h5>
-                    <p class="card-text text-truncate">The cool and creamy combination of chocolate and mint is what keeps us unwrapping another Andes candy or sneaking just one more Thin Mint cookie. With this simple Frappuccino-inspired recipe, your coffee can be just as much of a treat—and still not too sweet.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-item mt-2 mx-auto py-3 px-4">
-            <p class="">TEA</p>
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto my-4" style="width:90%;">
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/earl.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Earl Grey</h5>
-                    <p class="card-text text-truncate">Earl Grey tea is one of the best-known tea blends on the market. Traditionally, it’s a simple blend of black tea and oil of bergamot. Other tea bases are also used, including green tea, oolong, and rooibos. Bergamot oil is derived from the rind of a fruit called the bergamot orange, commonly grown in Italy.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/greentea.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Green Tea</h5>
-                    <p class="card-text text-truncate">Green tea is a type of "true tea" made from the leaves of the tea plant. It's cultivated in China and Japan, where it is also the most popular. Green tea is gaining global acclaim, mostly due to its potential health benefits. There are different types of green tea, including dragonwell, gunpowder, matcha, and sencha. Though they vary in taste, green teas tend to have a mellow flavor. It's also used in tea-flavored food recipes and other drinks, such as smoothies</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/jasmine.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Jasmine Tea</h5>
-                    <p class="card-text text-truncate">Jasmine tea is a type of tea, scented with the aroma of blossoms from the jasmine plant.It’s typically based on green tea, but sometimes black or white tea is used instead.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-        </div>
-        <div class="menu-item mt-2 mx-auto py-3 px-4">
-            <p class="">ICE BLENDED</p>
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto my-4" style="width:90%;">
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/caramel.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Caramel</h5>
-                    <p class="card-text text-truncate">A sweet treat made from our delicious coffee extract, French Deluxe™ vanilla powder, skimmed milk, caramel sauce, and blended with ice then topped with whipped cream and a drizzle of caramel sauce.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/jelly.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Coffee Jelly</h5>
-                    <p class="card-text text-truncate">Coffee Jelly is a delicious coffee-based dessert made of jelly cubes infused with coffee. It is made by combining jelly cubes with a thick and flavorful coffee-infused cream.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/cookies.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Cookies and Cream</h5>
-                    <p class="card-text text-truncate">An absolutely classic milkshake flavour in the form of a blended, iced coffee – this cookies and cream protein frappe is a high-protein version of your favourite coffee shop drink. Blended with our cookies & cream whey protein, ice cubes, coffee and cocoa powder for a creamy texture and moreish flavor.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/Hazelnut.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Hazelnut Mocha</h5>
-                    <p class="card-text text-truncate">The perfect blend of Moccona coffee combined with Cadbury cocoa and a hint of Hazelnut flavour, that delivers a creamy indulgent mocha experience, finished with a layer of velvety froth.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/matcha.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Matcha Cream</h5>
-                    <p class="card-text text-truncate">The perfect blend of Moccona coffee combined with Cadbury cocoa and a hint of Hazelnut flavour, that delivers a creamy indulgent mocha experience, finished with a layer of velvety froth.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <img src="{{asset('images/strawberry.jpg')}}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Strawberry Cream</h5>
-                    <p class="card-text text-truncate">The perfect blend of Moccona coffee combined with Cadbury cocoa and a hint of Hazelnut flavour, that delivers a creamy indulgent mocha experience, finished with a layer of velvety froth.</p>
-                    <a href="#" class="btn btn-outline-dark">Read more</a>
-                </div>
-                </div>
-            </div>
-        </div>
+            @endforeach
+        </div> --}}
         
         <div class="fiche mx-auto mt-5 d-flex align-items-center justify-content-evenly">
             <div style="width: 250px;">
