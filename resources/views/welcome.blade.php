@@ -96,13 +96,13 @@
         <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto my-4" style="width:90%;background-color: #efefef;">
             @foreach ($dishes as $dish)
             <div class="col">
-                <div class="card rounded-4">
+                <div class="card rounded-4" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
                 <img src="{{$dish->image_path}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$dish->name}}</h5>
                     <p class="">{{$dish->Category}}</p>
                     <p class="card-text text-truncate">{{$dish->description}}</p>
-                    <h5 class="card-title text-end" style="background-color: ">{{$dish->price}} Euro</h5>             
+                    <button class="btn border-0 text-white px-4 my-3" style="background-color: #567189;box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px;">{{$dish->price}} Euro</button>             
                 </div>
                 </div>
             </div>
