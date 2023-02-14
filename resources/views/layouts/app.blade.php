@@ -32,7 +32,9 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        <li class="nav-item ms-5 me-3">
+                            <a class="nav-link me-auto text-dark fw-semibold" aria-current="page" href="/menu">Menu</a>
+                        </li>   
                     </ul>
 
                     <!-- Right Side Of Navbar -->

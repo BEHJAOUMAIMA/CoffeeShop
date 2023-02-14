@@ -12,39 +12,64 @@
         <title>Coffee Shop</title>
     </head>
     <body class="">
-        <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img class="logo ms-3" src="{{asset('images/logo1.png')}}" alt=""><span class="title me-5">ouuuffeeee</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item ms-5 me-3">
-                        <a class="nav-link me-auto text-dark fw-semibold" aria-current="page" href="/homeUser">Home</a>
-                    </li> 
-                    <li class="nav-item ms-5 me-3">
-                        <a class="nav-link me-auto text-dark fw-semibold" aria-current="page" href="/menu">Menu</a>
-                    </li>    
-                </ul>
-                <div>
-                    @if (Route::has('login'))
-                        <div>
-                            @auth
-                                <a href="{{ url('/menu') }}" class="text-dark fs-6 fw-normal text-decoration-none"> {{ Auth::user()->name }}</a>
-                            @else
-                                <a href="{{ route('login') }}" class="aut fs-6 text-dark fw-semibold text-decoration-none px-2">Login</a>
+        <nav class="navbar navbar-expand-md mb-5">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                <img class="logo ms-3" src="{{asset('images/logo1.png')}}" alt=""><span class="title me-5">ouuuffeeee</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                                @if (Route::has('register'))
-                                    <a href="{{ route('register') }}" class="aut fs-6 text-dark fw-semibold ms-3 me-3 text-decoration-none px-2">Register</a>
-                                @endif
-                            @endauth
-                        </div>
-                    @endif
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item ms-5 me-3">
+                            <a class="nav-link me-auto text-dark fw-semibold" aria-current="page" href="/menu">Menu</a>
+                        </li>   
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link aut fs-6 text-dark fw-semibold text-decoration-none" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link aut fs-6 text-dark fw-semibold me-3 text-decoration-none" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="/profile">
+                                        Edit Profile
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     <div class="container">
         @if(session('error'))
             <div class="alert alert-danger mb-1 mt-1">
@@ -65,7 +90,25 @@
             <p class="citation">A gathering place in Downtown Farmville! Stop by and enjoy coffee, tea, live music,</p>
             <p class="citation">ice cream and much more!</p>
         </div>
-        
+        <div>
+            <p class="fs-3 fw-bold text-center">Our Menu</p>  
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto my-4" style="width:90%;background-color: #efefef;">
+            @foreach ($dishes as $dish)
+            <div class="col">
+                <div class="card rounded-4">
+                <img src="{{$dish->image_path}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{$dish->name}}</h5>
+                    <p class="">{{$dish->Category}}</p>
+                    <p class="card-text text-truncate">{{$dish->description}}</p>
+                    <h5 class="card-title text-end" style="background-color: ">{{$dish->price}} Euro</h5>             
+                </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
         <div class="fiche mx-auto mt-5 d-flex align-items-center justify-content-evenly">
             <div style="width: 250px;">
             </div>
@@ -80,6 +123,7 @@
                 <p class="fiche-text text-center">boost your day now !</p>
             </div>
         </div>
+        
     </section>
     <footer style="background-color:#393E46;">
         <div class="container mt-5 py-5">

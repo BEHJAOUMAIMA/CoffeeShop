@@ -93,6 +93,17 @@ class DishesController extends Controller
             ]);
 
         }
+        $request->validate([
+            'dishName'=>'required',
+            'dishPrice'=>'required',
+            'dishCategory'=>'required',
+            'dishDescription'=>'required',
+        ],[
+            'dishName.required' => 'Please enter a valid name for the dish !',
+            'dishPrice.required' => 'Please enter the price !',
+            'dishCategory.required' => 'Enter a Category !',
+            'dishDescription.required' => 'Enter a description !',
+        ]);
         $dish->update([
             'name'=>$request->dishName,
             'price'=>$request->dishPrice,

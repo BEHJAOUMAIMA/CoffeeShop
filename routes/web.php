@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class, 'welcome']);
-Route::get('/homeUser', [DishesController::class, 'index']);
+Route::get('/',[DishesController::class, 'index']);
 Route::resource('/menu',DishesController::class)->middleware('isAdmin');
 
 Route::middleware(['auth'])->group(function () {
